@@ -9,8 +9,28 @@ main{
 
 }
 
+/* .card{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-row-gap: 100px;
+    justify-items: center;
+    align-items: center;
+} */
 
 footer.page-footer{
     padding-top: 0;
     text-align: right;
+}
+
+div.right{
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#allItems:link{
+    color: black;
+}
+#allItems:hover{
+    color: #616161;
 }
