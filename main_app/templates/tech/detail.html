@@ -12,5 +12,9 @@
             <p>RAM: {{laptop.ram}}</p>
             <p>Storage: {{laptop.storage}}</p>
         </div>
+        <div class="card-action">
+            <a href="{% url 'tech_update' laptop.id %}">Edit</a>
+            <a href="{% url 'tech_delete' laptop.id %}">Delete</a>
+        </div>
     </div>
 {% endblock %}

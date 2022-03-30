@@ -1,8 +1,19 @@
-
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from main_app.models import Tech
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
+
+class TechCreate(CreateView):
+    model = Tech
+    fields = '__all__'
+
+class TechUpdate(UpdateView):
+    model = Tech
+    fields = ['name', 'processor', 'display', 'ram', 'storage', 'os', 'price']
+
+class TechDelete(DeleteView):
+    model = Tech
+    success_url = '/tech/'
 
 def home(request):
     return render(request,'home.html')
