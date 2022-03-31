@@ -23,10 +23,10 @@ footer.page-footer{
     text-align: right;
 }
 
-div.right{
+/* div.right{
     margin-top: 20px;
     margin-right: 20px;
-}
+} */
 
 #allItems:link{
     color: black;

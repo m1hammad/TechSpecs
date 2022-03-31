@@ -1,4 +1,3 @@
-from tkinter import CASCADE
 from django.db import models
 from django.urls import reverse
 
@@ -12,6 +11,15 @@ REVIEWS = (
     ('B', 'Bad')
 )
 
+class Customize(models.Model):
+    hardware = models.CharField(max_length=150)
+    
+    def __str__(self):
+        return self.hardware
+
+    def get_absolute_url(self):
+        return reverse("customize_detail", kwargs={"pk": self.id})
+
 class Tech(models.Model):
     name = models.CharField(max_length=500)
     processor = models.CharField(max_length=250)
@@ -21,6 +29,7 @@ class Tech(models.Model):
     os = models.CharField(max_length=100)
     price = models.FloatField()
     image = models.CharField(default=None, blank=True, null=True, max_length=2000)
+    customizations = models.ManyToManyField(Customize)
     
     def get_absolute_url(self):
         return reverse("detail", kwargs={"tech_id": self.id})

@@ -1,20 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>List of available Laptops</h1>
-{% for laptop in laptops %}
-    <a id="allItems" href="{% url 'detail' laptop.id %}">
-        <div class='card'>
-            <div class='right'><img width='100px' height='100px' src="{{laptop.image}}"></div>
-            <div class='card-content'>
-                <span class='card-title'>{{laptop.name}}</span>
-                <p>price: {{laptop.price}}</p>
-                <p>OS: {{laptop.os}}</p>
-                <p>Processor: {{laptop.processor}}</p>
-                <p>Display: {{laptop.display}}</p>
-                <p>RAM: {{laptop.ram}}</p>
-                <p>Storage: {{laptop.storage}}</p>
-            </div>
+<div class="row">
+    {% for laptop in laptops %}
+        <div class="col m3">
+            <a id="allItems" href="{% url 'detail' laptop.id %}">
+                <div class='card large z-depth-5'>
+                    <div class='card-image'>
+                        <img src="{{laptop.image}}">
+                    </div>
+                    <div class='card-content'>
+                        <span class="card-title">{{laptop.name}}</span>
+                        <p>price: {{laptop.price}}</p>
+                        <p>OS: {{laptop.os}}</p>
+                        <p>Processor: {{laptop.processor}}</p>
+                        <p>Display: {{laptop.display}}</p>
+                        <p>RAM: {{laptop.ram}}</p>
+                        <p>Storage: {{laptop.storage}}</p>
+                    </div>
+                </div>
+            </a>
         </div>
-    </a>
-{% endfor %}
+    {% endfor %}
+    
+</div>
 {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>List of Customizations</h1>
+
+    {% for customization in customize_list %}
+        <a href="{% url 'customize_detail' customization.id %}">
+            <div class="card">
+                <div class="card_content">
+                    <span class="card-title">{{customization.hardware}}</span>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+
+{% endblock content %}
