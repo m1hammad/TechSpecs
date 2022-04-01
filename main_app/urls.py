@@ -22,4 +22,7 @@ urlpatterns = [
     path('tech/<int:tech_id>/assoc_customize/<int:customize_id>', views.assoc_customize, name='assoc_customize'),
     # Disassociate customization from laptop
     path('tech/<int:tech_id>/disassoc_customize/<int:customize_id>', views.disassoc_customize, name='disassoc_customize'),
+    
+    #signup
+    path('accounts/signup', views.signup, name='signup')
 ]
